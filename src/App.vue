@@ -64,7 +64,6 @@ button {
   height: 100vh;
   justify-content: center;
   overflow: hidden;
-  padding: 10px;
 }
 
 .title {

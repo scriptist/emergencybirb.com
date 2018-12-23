@@ -43,7 +43,8 @@ export default {
 <style lang="scss" scoped>
 .envelope-wrapper {
   $color: #4682b4;
-  max-width: 100vmin;
+  max-width: 90vmin;
+  position: relative;
   width: 800px;
 
   .envelope {
