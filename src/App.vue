@@ -5,6 +5,10 @@
 </template>
 
 <script>
+import birbs from './birbs.js';
+
+console.log(birbs);
+
 export default {
   name: 'App',
 };
