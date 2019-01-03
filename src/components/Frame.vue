@@ -1,5 +1,5 @@
 <template>
-  <img class="frame" :src="image" />
+  <img class="frame" :src="image" @click="onClick" />
 </template>
 
 <script>
@@ -7,6 +7,11 @@ export default {
   name: 'Frame',
   props: {
     image: String,
+  },
+  methods: {
+    onClick() {
+      this.$emit('click');
+    },
   },
 };
 </script>

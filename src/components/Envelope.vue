@@ -4,7 +4,7 @@
       <div class="envelope-piece">
         <div class="paper back" />
       </div>
-      <Frame class="contents" :image="currentBirb" />
+      <Frame class="contents" :image="currentBirb" @click="onImageClick" />
       <div class="envelope-piece">
         <div class="wrapper">
           <div class="paper left" />
@@ -17,11 +17,13 @@
         </div>
       </div>
     </div>
+    <Lightbox :image="currentBirb" :visible="lightbox" @click="onImageClick" />
   </div>
 </template>
 
 <script>
 import Frame from './Frame.vue';
+import Lightbox from './Lightbox.vue';
 import currentBirb from '../currentBirb.js';
 
 export default {
@@ -30,11 +32,14 @@ export default {
     open: Boolean,
     slide: Boolean,
   },
-  components: { Frame },
-  data: () => ({ currentBirb }),
+  components: { Frame, Lightbox },
+  data: () => ({ currentBirb, lightbox: false }),
   methods: {
     onButtonClick() {
       this.$emit('open');
+    },
+    onImageClick() {
+      this.lightbox = !this.lightbox;
     },
   },
 };
@@ -81,12 +86,13 @@ export default {
   }
 
   .contents {
+    cursor: pointer;
     left: 50%;
+    max-height: 90%;
+    max-width: 90%;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-    max-height: 80%;
-    max-width: 80%;
   }
 
   .envelope-piece,
