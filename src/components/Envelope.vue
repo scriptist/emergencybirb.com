@@ -4,7 +4,7 @@
       <div class="envelope-piece">
         <div class="paper back" />
       </div>
-      <Frame class="contents" :image="currentBirb" @click="onImageClick" />
+      <Frame class="contents" :birb="currentBirb" @click="onImageClick" />
       <div class="envelope-piece">
         <div class="wrapper">
           <div class="paper left" />

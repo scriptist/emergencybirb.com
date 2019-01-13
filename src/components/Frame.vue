@@ -1,13 +1,16 @@
 <template>
-  <img class="frame" :src="image" @click="onClick" />
+  <Birb class="frame" :src="birb" @click="onClick" />
 </template>
 
 <script>
+import Birb from './Birb.vue';
+
 export default {
   name: 'Frame',
   props: {
-    image: String,
+    birb: String,
   },
+  components: { Birb },
   methods: {
     onClick() {
       this.$emit('click');

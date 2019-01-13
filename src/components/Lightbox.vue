@@ -1,16 +1,19 @@
 <template>
   <div :class="`lightbox ${visible ? 'visible' : ''}`" @click="onClick">
-    <img class="image" :src="image" />
+    <Birb class="image" :src="image" />
   </div>
 </template>
 
 <script>
+import Birb from './Birb.vue';
+
 export default {
   name: 'Lightbox',
   props: {
     image: String,
     visible: Boolean,
   },
+  components: { Birb },
   methods: {
     onClick() {
       this.$emit('click');
